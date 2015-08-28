@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<context:annotation-config />
+
+	<bean id="server" class="com.youlite.jxc.server.Server">
+		<property name="plugins">
+			<list>
+				<ref bean="userAccountManager" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="systemInfo" class="com.youlite.jxc.common.SystemInfo">
+		<property name="env">
+			<value>Test</value>
+		</property>
+		<property name="category">
+			<value>EB</value>
+		</property>
+		<property name="id">
+			<value>S1</value>
+		</property>
+	</bean>
+
+	<bean id="userAccountManager" class="com.youlite.jxc.server.UserAccountManager">
+	</bean>
+
+	<!-- Derby setting -->
+	<bean id="derbyPort" class="java.lang.String">
+		<constructor-arg value="1527" />
+	</bean>
+
+</beans>
