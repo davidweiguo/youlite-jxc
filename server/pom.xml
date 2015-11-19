@@ -14,6 +14,7 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<derby-version>10.11.1.1</derby-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,6 +27,22 @@
 			<groupId>com.youlite.jxc.common</groupId>
 			<artifactId>jxc-common</artifactId>
 			<version>${jxc-version}</version>
+		</dependency>
+		<!-- Derby -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>${derby-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbynet</artifactId>
+			<version>${derby-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>${derby-version}</version>
 		</dependency>
 	</dependencies>
 </project>

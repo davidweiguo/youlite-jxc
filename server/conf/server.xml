@@ -7,6 +7,9 @@
 
 	<context:annotation-config />
 
+	<import resource="manager.xml" />
+	<import resource="persistence.xml" />
+
 	<bean id="server" class="com.youlite.jxc.server.Server">
 		<property name="plugins">
 			<list>
@@ -34,5 +37,4 @@
 	<bean id="derbyPort" class="java.lang.String">
 		<constructor-arg value="1527" />
 	</bean>
-
 </beans>

@@ -2,6 +2,7 @@ package com.youlite.jxc.server;
 
 import java.util.List;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +11,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.youlite.jxc.common.IPlugin;
 import com.youlite.jxc.common.SystemInfo;
+import com.youlite.jxc.server.persistence.PersistenceManager;
 
 public class Server implements ApplicationContextAware {
 
@@ -17,12 +19,15 @@ public class Server implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
 
 	@Autowired
+	private PersistenceManager persistenceManager;
+
+	@Autowired
 	private SystemInfo systemInfo;
 
 	private List<IPlugin> plugins;
 
-	public void init() {
-		System.out.println("********");
+	public void init() throws Exception {
+		persistenceManager.init();
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext)
@@ -41,16 +46,17 @@ public class Server implements ApplicationContextAware {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		String configFile = "conf/server.xml";
-		if (args.length == 1) {
-			configFile = args[0];
-		} else if (args.length == 2) {
-			configFile = args[0];
-		}
+		String logConfigFile = "conf/log4j.xml";
+		DOMConfigurator.configure(logConfigFile);
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				configFile);
 
 		// start server
 		Server server = (Server) context.getBean("server");
-		server.init();
+		try {
+			server.init();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
