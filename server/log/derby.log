@@ -1,0 +1,31 @@
+----------------------------------------------------------------
+Fri Nov 20 11:40:22 CST 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0151-22fa-8752-000006168b40 
+on database directory C:\Users\David\git\youlite-jxc\server\database with class loader sun.misc.Launcher$AppClassLoader@2d8eef25 
+Loaded from file:/C:/Users/David/.m2/repository/org/apache/derby/derby/10.11.1.1/derby-10.11.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_80-b15
+user.dir=C:\Users\David\git\youlite-jxc\server
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=null
+derby.stream.error.file=log/derby.log
+Database Class Loader started - derby.database.classpath=''
+Fri Nov 20 11:40:23 CST 2015 : Could not listen on port 1527 on host 0.0.0.0:
+ java.net.BindException: Address already in use: JVM_Bind
+An exception was thrown during network server startup. DRDA_ListenPort.S:Could not listen on port 1527 on host 0.0.0.0:
+ java.net.BindException: Address already in use: JVM_Bind
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.derby.iapi.jdbc.DRDAServerStarter.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.Exception: DRDA_ListenPort.S:Could not listen on port 1527 on host 0.0.0.0:
+ java.net.BindException: Address already in use: JVM_Bind
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.consolePropertyMessageWork(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.consolePropertyMessage(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.blockingStart(Unknown Source)
+	... 6 more

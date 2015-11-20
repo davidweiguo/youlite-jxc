@@ -25,8 +25,6 @@ import javax.jms.TextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.youlite.jxc.common.transport.IObjectTransportService;
-
 /**
  * 
  * @author phoenix
@@ -39,20 +37,11 @@ public class ActiveMQGenericService extends ActiveMQService implements
 	// default ISerialization instance
 	private ISerialization defaultSerialization;
 
-	// ISerialization Mapping,
-	// Key = topic, Value = ISerialization instance
-	private HashMap<String, ISerialization> serializationMap = new HashMap<String, ISerialization>();
-
 	private HashMap<String, ArrayList<IObjectListener>> objSubscribers = new HashMap<String, ArrayList<IObjectListener>>();
 	private HashMap<IObjectListener, MessageConsumer> objConsumers = new HashMap<IObjectListener, MessageConsumer>();
 
 	public void setDefaultSerialization(ISerialization defaultSerialization) {
 		this.defaultSerialization = defaultSerialization;
-	}
-
-	public void setSerializationMap(
-			HashMap<String, ISerialization> serializationMap) {
-		this.serializationMap = serializationMap;
 	}
 
 	class ObjectListenerAdaptor implements MessageListener {
@@ -66,7 +55,6 @@ public class ActiveMQGenericService extends ActiveMQService implements
 			this.serialization = serialization;
 		}
 
-		@Override
 		public void onMessage(Message message) {
 			try {
 				if (message instanceof TextMessage) {
@@ -119,7 +107,6 @@ public class ActiveMQGenericService extends ActiveMQService implements
 			this.serialization = serialization;
 		}
 
-		@Override
 		public void sendMessage(Object obj) throws Exception {
 			if (obj == null) {
 				log.warn("object is null.");
@@ -153,17 +140,9 @@ public class ActiveMQGenericService extends ActiveMQService implements
 	}
 
 	private ISerialization getSerializationInstance(String topic) {
-		if (topic == null) {
-			return defaultSerialization;
-		}
-		if (serializationMap.containsKey(topic)) {
-			return serializationMap.get(topic);
-		} else {
-			return defaultSerialization;
-		}
+		return defaultSerialization;
 	}
 
-	@Override
 	public void createReceiver(String subject, IObjectListener listener)
 			throws Exception {
 		// only one listener per subject allowed for point to point connection
@@ -182,7 +161,6 @@ public class ActiveMQGenericService extends ActiveMQService implements
 		}
 	}
 
-	@Override
 	public void createSubscriber(String subject, IObjectListener listener)
 			throws Exception {
 		// many listeners per subject allowed for publish/subscribe
@@ -202,7 +180,6 @@ public class ActiveMQGenericService extends ActiveMQService implements
 		}
 	}
 
-	@Override
 	public void removeSubscriber(String subject, IObjectListener listener)
 			throws Exception {
 		ArrayList<IObjectListener> listeners = objSubscribers.get(subject);
@@ -220,18 +197,15 @@ public class ActiveMQGenericService extends ActiveMQService implements
 		}
 	}
 
-	@Override
 	public void sendMessage(String subject, Object obj) throws Exception {
 		createObjectSender(subject).sendMessage(obj);
 
 	}
 
-	@Override
 	public void publishMessage(String subject, Object obj) throws Exception {
 		createObjectPublisher(subject).sendMessage(obj);
 	}
 
-	@Override
 	public IObjectSender createObjectSender(String subject) throws Exception {
 		MessageProducer producer = senders.get(subject);
 		if (null == producer) {
@@ -244,7 +218,6 @@ public class ActiveMQGenericService extends ActiveMQService implements
 		return new ObjectSender(producer, serialization);
 	}
 
-	@Override
 	public IObjectSender createObjectPublisher(String subject) throws Exception {
 		MessageProducer producer = publishers.get(subject);
 		if (null == producer) {

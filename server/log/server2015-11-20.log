@@ -1,0 +1,721 @@
+10:47:51,517 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3510dc7d: startup date [Fri Nov 20 10:47:51 CST 2015]; root of context hierarchy
+10:47:51,551 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:47:51,660 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:47:51,691 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:47:51,905 [main] INFO  Environment  - Hibernate 3.2.5
+10:47:51,907 [main] INFO  Environment  - hibernate.properties not found
+10:47:51,909 [main] INFO  Environment  - Bytecode provider name : cglib
+10:47:51,911 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:47:51,940 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:47:51,942 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:47:52,565 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:47:52,565 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@2d8eef25, see the next exception for details.)
+10:47:52,566 [main] WARN  SettingsFactory  - Could not obtain connection metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@2d8eef25, see the next exception for details.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:81)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:84)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2009)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1292)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:805)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:745)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:838)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.youlite.jxc.server.Server.main(Server.java:51)
+Caused by: java.sql.SQLException: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@2d8eef25, see the next exception for details.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 36 more
+Caused by: ERROR XJ040: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@2d8eef25, see the next exception for details.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 49 more
+Caused by: ERROR XSAI2: The conglomerate (16) requested does not exist.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.access.heap.HeapConglomerateFactory.readConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.CacheableConglomerate.setIdentity(Unknown Source)
+	at org.apache.derby.impl.services.cache.ConcurrentCache.find(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.conglomCacheFind(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findExistingConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.readDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PC_XenaVersion.upgradeIfNeeded(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.<init>(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+	... 46 more
+10:47:52,600 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:47:52,627 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:47:52,629 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:47:52,629 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:47:52,629 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:47:52,629 [main] INFO  SettingsFactory  - Scrollable result sets: disabled
+10:47:52,629 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:47:52,630 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:47:52,630 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:47:52,630 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:47:52,630 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:47:52,630 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:47:52,630 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:47:52,632 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:47:52,632 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:47:52,632 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:47:52,632 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:47:52,632 [main] INFO  SettingsFactory  - Query cache: disabled
+10:47:52,632 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:47:52,632 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:47:52,632 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:47:52,635 [main] INFO  SettingsFactory  - Statistics: disabled
+10:47:52,635 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:47:52,635 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:47:52,635 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:47:52,673 [main] INFO  SessionFactoryImpl  - building session factory
+10:47:52,677 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:47:52,703 [main] WARN  FileSystemXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistenceManager' defined in file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'embeddedSQLServer' of bean class [com.youlite.jxc.server.persistence.PersistenceManager]: Bean property 'embeddedSQLServer' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+10:47:52,703 [main] INFO  LocalSessionFactoryBean  - Closing Hibernate SessionFactory
+10:47:52,703 [main] INFO  SessionFactoryImpl  - closing
+10:51:17,040 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3510dc7d: startup date [Fri Nov 20 10:51:17 CST 2015]; root of context hierarchy
+10:51:17,073 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:51:17,163 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:51:17,191 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:51:17,375 [main] INFO  Environment  - Hibernate 3.2.5
+10:51:17,377 [main] INFO  Environment  - hibernate.properties not found
+10:51:17,378 [main] INFO  Environment  - Bytecode provider name : cglib
+10:51:17,380 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:51:17,403 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:51:17,405 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:51:17,670 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:51:17,670 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:51:17,671 [main] WARN  SettingsFactory  - Could not obtain connection metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:81)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:84)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2009)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1292)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:805)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:745)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:838)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.youlite.jxc.server.Server.main(Server.java:51)
+Caused by: java.sql.SQLException: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 36 more
+Caused by: ERROR XJ040: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 49 more
+Caused by: ERROR XSAI2: The conglomerate (16) requested does not exist.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.access.heap.HeapConglomerateFactory.readConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.CacheableConglomerate.setIdentity(Unknown Source)
+	at org.apache.derby.impl.services.cache.ConcurrentCache.find(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.conglomCacheFind(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findExistingConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.readDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PC_XenaVersion.upgradeIfNeeded(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.<init>(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+	... 46 more
+10:51:17,681 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:51:17,700 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:51:17,701 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:51:17,701 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:51:17,701 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:51:17,702 [main] INFO  SettingsFactory  - Scrollable result sets: disabled
+10:51:17,702 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:51:17,702 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:51:17,702 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:51:17,702 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:51:17,702 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:51:17,702 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:51:17,702 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:51:17,703 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:51:17,703 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:51:17,703 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:51:17,703 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:51:17,704 [main] INFO  SettingsFactory  - Query cache: disabled
+10:51:17,704 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:51:17,704 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:51:17,704 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:51:17,706 [main] INFO  SettingsFactory  - Statistics: disabled
+10:51:17,706 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:51:17,707 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:51:17,707 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:51:17,728 [main] INFO  SessionFactoryImpl  - building session factory
+10:51:17,730 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:51:18,003 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:51:18,003 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:51:18,004 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:51:18,004 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:54:18,367 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@d818ff0: startup date [Fri Nov 20 10:54:18 CST 2015]; root of context hierarchy
+10:54:18,402 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:54:18,496 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:54:18,526 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:54:18,720 [main] INFO  Environment  - Hibernate 3.2.5
+10:54:18,721 [main] INFO  Environment  - hibernate.properties not found
+10:54:18,722 [main] INFO  Environment  - Bytecode provider name : cglib
+10:54:18,724 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:54:18,749 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:54:18,750 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:54:19,034 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:54:19,035 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:54:19,035 [main] WARN  SettingsFactory  - Could not obtain connection metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:81)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:84)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2009)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1292)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:805)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:745)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1637)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:838)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.youlite.jxc.server.Server.main(Server.java:51)
+Caused by: java.sql.SQLException: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.seeNextException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.bootDatabase(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.AutoloadedDriver.connect(Unknown Source)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 36 more
+Caused by: ERROR XJ040: Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 49 more
+Caused by: ERROR XSAI2: The conglomerate (16) requested does not exist.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.access.heap.HeapConglomerateFactory.readConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.CacheableConglomerate.setIdentity(Unknown Source)
+	at org.apache.derby.impl.services.cache.ConcurrentCache.find(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.conglomCacheFind(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.findExistingConglomerate(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMTransaction.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.openScan(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.readDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedDbProperties(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getCachedProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.getProperty(Unknown Source)
+	at org.apache.derby.impl.store.access.PC_XenaVersion.upgradeIfNeeded(Unknown Source)
+	at org.apache.derby.impl.store.access.PropertyConglomerate.<init>(Unknown Source)
+	at org.apache.derby.impl.store.access.RAMAccessManager.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.startModule(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.bootServiceModule(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.bootStore(Unknown Source)
+	at org.apache.derby.impl.db.BasicDatabase.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.boot(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.bootModule(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startProviderService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.findProviderAndStartService(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.startPersistentService(Unknown Source)
+	at org.apache.derby.iapi.services.monitor.Monitor.startPersistentService(Unknown Source)
+	... 46 more
+10:54:19,046 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:54:19,067 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:54:19,068 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:54:19,068 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:54:19,068 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:54:19,069 [main] INFO  SettingsFactory  - Scrollable result sets: disabled
+10:54:19,069 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:54:19,069 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:54:19,069 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:54:19,069 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:54:19,069 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:54:19,069 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:54:19,069 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:54:19,070 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:54:19,070 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:54:19,070 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:54:19,070 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:54:19,070 [main] INFO  SettingsFactory  - Query cache: disabled
+10:54:19,070 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:54:19,071 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:54:19,071 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:54:19,073 [main] INFO  SettingsFactory  - Statistics: disabled
+10:54:19,073 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:54:19,074 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:54:19,074 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:54:19,095 [main] INFO  SessionFactoryImpl  - building session factory
+10:54:19,097 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:54:19,321 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:54:19,321 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:54:19,322 [main] WARN  JDBCExceptionReporter  - SQL Error: 0, SQLState: null
+10:54:19,322 [main] ERROR JDBCExceptionReporter  - Cannot create PoolableConnectionFactory (Failed to start database 'database' with class loader sun.misc.Launcher$AppClassLoader@5df1cc1a, see the next exception for details.)
+10:56:53,016 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@d818ff0: startup date [Fri Nov 20 10:56:53 CST 2015]; root of context hierarchy
+10:56:53,048 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:56:53,136 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:56:53,165 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:56:53,348 [main] INFO  Environment  - Hibernate 3.2.5
+10:56:53,349 [main] INFO  Environment  - hibernate.properties not found
+10:56:53,350 [main] INFO  Environment  - Bytecode provider name : cglib
+10:56:53,352 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:56:53,376 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:56:53,377 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:56:54,157 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+10:56:54,157 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+10:56:54,168 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:56:54,195 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:56:54,196 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:56:54,196 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:56:54,196 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:56:54,197 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+10:56:54,197 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:56:54,197 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:56:54,197 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:56:54,197 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:56:54,197 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:56:54,197 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:56:54,197 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:56:54,199 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:56:54,199 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:56:54,199 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:56:54,199 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:56:54,199 [main] INFO  SettingsFactory  - Query cache: disabled
+10:56:54,199 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:56:54,199 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:56:54,199 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:56:54,203 [main] INFO  SettingsFactory  - Statistics: disabled
+10:56:54,203 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:56:54,204 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:56:54,204 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:56:54,227 [main] INFO  SessionFactoryImpl  - building session factory
+10:56:54,229 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:56:54,374 [main] ERROR PARSER  - line 1:1: unexpected token: CREATE
+10:59:06,040 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@65fbadc2: startup date [Fri Nov 20 10:59:06 CST 2015]; root of context hierarchy
+10:59:06,073 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:59:06,165 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:59:06,195 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:59:06,380 [main] INFO  Environment  - Hibernate 3.2.5
+10:59:06,382 [main] INFO  Environment  - hibernate.properties not found
+10:59:06,382 [main] INFO  Environment  - Bytecode provider name : cglib
+10:59:06,384 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:59:06,408 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:59:06,410 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:59:07,084 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+10:59:07,084 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+10:59:07,092 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:59:07,111 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:59:07,112 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:59:07,112 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+10:59:07,112 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:59:07,112 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:59:07,112 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:59:07,112 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:59:07,113 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:59:07,114 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:59:07,114 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:59:07,114 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:59:07,114 [main] INFO  SettingsFactory  - Query cache: disabled
+10:59:07,114 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:59:07,114 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:59:07,114 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:59:07,116 [main] INFO  SettingsFactory  - Statistics: disabled
+10:59:07,116 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:59:07,117 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:59:07,117 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:59:07,136 [main] INFO  SessionFactoryImpl  - building session factory
+10:59:07,138 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:59:07,264 [main] ERROR PARSER  - line 1:1: unexpected token: CREATE
+10:59:26,460 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@d818ff0: startup date [Fri Nov 20 10:59:26 CST 2015]; root of context hierarchy
+10:59:26,493 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:59:26,580 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:59:26,609 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:59:26,795 [main] INFO  Environment  - Hibernate 3.2.5
+10:59:26,798 [main] INFO  Environment  - hibernate.properties not found
+10:59:26,799 [main] INFO  Environment  - Bytecode provider name : cglib
+10:59:26,801 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:59:26,825 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:59:26,826 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:59:27,549 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+10:59:27,549 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+10:59:27,557 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:59:27,577 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:59:27,578 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:59:27,578 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:59:27,578 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:59:27,578 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+10:59:27,578 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:59:27,579 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:59:27,579 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:59:27,579 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:59:27,579 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:59:27,579 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:59:27,579 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:59:27,580 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:59:27,580 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:59:27,580 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:59:27,580 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:59:27,580 [main] INFO  SettingsFactory  - Query cache: disabled
+10:59:27,580 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:59:27,580 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:59:27,580 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:59:27,583 [main] INFO  SettingsFactory  - Statistics: disabled
+10:59:27,583 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:59:27,583 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:59:27,583 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:59:27,603 [main] INFO  SessionFactoryImpl  - building session factory
+10:59:27,605 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:59:27,730 [main] ERROR PARSER  - line 1:1: unexpected token: DROP
+10:59:44,818 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3510dc7d: startup date [Fri Nov 20 10:59:44 CST 2015]; root of context hierarchy
+10:59:44,851 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+10:59:44,940 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+10:59:44,969 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+10:59:45,150 [main] INFO  Environment  - Hibernate 3.2.5
+10:59:45,152 [main] INFO  Environment  - hibernate.properties not found
+10:59:45,153 [main] INFO  Environment  - Bytecode provider name : cglib
+10:59:45,154 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+10:59:45,178 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+10:59:45,180 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+10:59:45,911 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+10:59:45,911 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+10:59:45,919 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+10:59:45,938 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+10:59:45,939 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+10:59:45,939 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+10:59:45,939 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+10:59:45,939 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+10:59:45,939 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+10:59:45,939 [main] INFO  SettingsFactory  - Connection release mode: on_close
+10:59:45,939 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+10:59:45,940 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+10:59:45,940 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+10:59:45,940 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+10:59:45,940 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+10:59:45,941 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+10:59:45,941 [main] INFO  SettingsFactory  - Query language substitutions: {}
+10:59:45,941 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+10:59:45,941 [main] INFO  SettingsFactory  - Second-level cache: enabled
+10:59:45,941 [main] INFO  SettingsFactory  - Query cache: disabled
+10:59:45,941 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+10:59:45,941 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+10:59:45,941 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+10:59:45,944 [main] INFO  SettingsFactory  - Statistics: disabled
+10:59:45,944 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+10:59:45,944 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+10:59:45,944 [main] INFO  SettingsFactory  - Named query checking : enabled
+10:59:45,965 [main] INFO  SessionFactoryImpl  - building session factory
+10:59:45,967 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+10:59:46,093 [main] ERROR PARSER  - line 1:1: unexpected token: DROP
+11:05:08,977 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6e4ccfdc: startup date [Fri Nov 20 11:05:08 CST 2015]; root of context hierarchy
+11:05:09,011 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+11:05:09,103 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+11:05:09,132 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+11:05:09,319 [main] INFO  Environment  - Hibernate 3.2.5
+11:05:09,321 [main] INFO  Environment  - hibernate.properties not found
+11:05:09,322 [main] INFO  Environment  - Bytecode provider name : cglib
+11:05:09,323 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+11:05:09,347 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+11:05:09,348 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+11:05:10,093 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+11:05:10,093 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+11:05:10,101 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+11:05:10,120 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+11:05:10,121 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+11:05:10,121 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+11:05:10,122 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Connection release mode: on_close
+11:05:10,122 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+11:05:10,122 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+11:05:10,122 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+11:05:10,124 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+11:05:10,124 [main] INFO  SettingsFactory  - Query language substitutions: {}
+11:05:10,124 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+11:05:10,124 [main] INFO  SettingsFactory  - Second-level cache: enabled
+11:05:10,124 [main] INFO  SettingsFactory  - Query cache: disabled
+11:05:10,124 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+11:05:10,124 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+11:05:10,124 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+11:05:10,126 [main] INFO  SettingsFactory  - Statistics: disabled
+11:05:10,127 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+11:05:10,127 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+11:05:10,127 [main] INFO  SettingsFactory  - Named query checking : enabled
+11:05:10,147 [main] INFO  SessionFactoryImpl  - building session factory
+11:05:10,149 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+11:05:10,278 [main] ERROR PARSER  - line 1:1: unexpected token: CREATE
+11:14:30,895 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3510dc7d: startup date [Fri Nov 20 11:14:30 CST 2015]; root of context hierarchy
+11:14:30,928 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+11:14:31,018 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+11:14:31,052 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+11:14:31,241 [main] INFO  Environment  - Hibernate 3.2.5
+11:14:31,243 [main] INFO  Environment  - hibernate.properties not found
+11:14:31,244 [main] INFO  Environment  - Bytecode provider name : cglib
+11:14:31,246 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+11:14:31,269 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+11:14:31,270 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+11:14:32,004 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+11:14:32,005 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+11:14:32,013 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+11:14:32,035 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+11:14:32,036 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+11:14:32,036 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+11:14:32,036 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+11:14:32,036 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+11:14:32,037 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+11:14:32,037 [main] INFO  SettingsFactory  - Connection release mode: on_close
+11:14:32,037 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+11:14:32,037 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+11:14:32,037 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+11:14:32,037 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+11:14:32,037 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+11:14:32,038 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+11:14:32,038 [main] INFO  SettingsFactory  - Query language substitutions: {}
+11:14:32,038 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+11:14:32,038 [main] INFO  SettingsFactory  - Second-level cache: enabled
+11:14:32,038 [main] INFO  SettingsFactory  - Query cache: disabled
+11:14:32,038 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+11:14:32,039 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+11:14:32,039 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+11:14:32,042 [main] INFO  SettingsFactory  - Statistics: disabled
+11:14:32,042 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+11:14:32,042 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+11:14:32,042 [main] INFO  SettingsFactory  - Named query checking : enabled
+11:14:32,063 [main] INFO  SessionFactoryImpl  - building session factory
+11:14:32,065 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+11:22:55,355 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5559c7f2: startup date [Fri Nov 20 11:22:55 CST 2015]; root of context hierarchy
+11:22:55,388 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+11:22:55,476 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+11:22:55,506 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+11:22:55,707 [main] INFO  Environment  - Hibernate 3.2.5
+11:22:55,709 [main] INFO  Environment  - hibernate.properties not found
+11:22:55,710 [main] INFO  Environment  - Bytecode provider name : cglib
+11:22:55,711 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+11:22:55,735 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+11:22:55,736 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+11:22:56,518 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+11:22:56,519 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+11:22:56,526 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+11:22:56,547 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+11:22:56,548 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+11:22:56,548 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+11:22:56,548 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Connection release mode: on_close
+11:22:56,548 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+11:22:56,548 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+11:22:56,548 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+11:22:56,550 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+11:22:56,550 [main] INFO  SettingsFactory  - Query language substitutions: {}
+11:22:56,550 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+11:22:56,550 [main] INFO  SettingsFactory  - Second-level cache: enabled
+11:22:56,550 [main] INFO  SettingsFactory  - Query cache: disabled
+11:22:56,550 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+11:22:56,550 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+11:22:56,550 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+11:22:56,552 [main] INFO  SettingsFactory  - Statistics: disabled
+11:22:56,552 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+11:22:56,553 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+11:22:56,553 [main] INFO  SettingsFactory  - Named query checking : enabled
+11:22:56,573 [main] INFO  SessionFactoryImpl  - building session factory
+11:22:56,575 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+11:22:56,601 [main] WARN  FileSystemXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'server': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.youlite.jxc.common.event.IRemoteEventManager com.youlite.jxc.server.Server.eventManager; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.youlite.jxc.common.event.IRemoteEventManager] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+11:22:56,601 [main] INFO  LocalSessionFactoryBean  - Closing Hibernate SessionFactory
+11:22:56,601 [main] INFO  SessionFactoryImpl  - closing
+11:40:22,254 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5559c7f2: startup date [Fri Nov 20 11:40:22 CST 2015]; root of context hierarchy
+11:40:22,287 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+11:40:22,379 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+11:40:22,411 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+11:40:22,611 [main] INFO  Environment  - Hibernate 3.2.5
+11:40:22,612 [main] INFO  Environment  - hibernate.properties not found
+11:40:22,613 [main] INFO  Environment  - Bytecode provider name : cglib
+11:40:22,615 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+11:40:22,643 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+11:40:22,645 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+11:40:23,397 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+11:40:23,397 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+11:40:23,404 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+11:40:23,424 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+11:40:23,425 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+11:40:23,425 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+11:40:23,425 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+11:40:23,425 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+11:40:23,425 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+11:40:23,425 [main] INFO  SettingsFactory  - Connection release mode: on_close
+11:40:23,426 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+11:40:23,426 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+11:40:23,426 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+11:40:23,426 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+11:40:23,426 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+11:40:23,427 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+11:40:23,427 [main] INFO  SettingsFactory  - Query language substitutions: {}
+11:40:23,427 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+11:40:23,427 [main] INFO  SettingsFactory  - Second-level cache: enabled
+11:40:23,427 [main] INFO  SettingsFactory  - Query cache: disabled
+11:40:23,427 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+11:40:23,427 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+11:40:23,427 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+11:40:23,429 [main] INFO  SettingsFactory  - Statistics: disabled
+11:40:23,430 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+11:40:23,430 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+11:40:23,430 [main] INFO  SettingsFactory  - Named query checking : enabled
+11:40:23,450 [main] INFO  SessionFactoryImpl  - building session factory
+11:40:23,452 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured

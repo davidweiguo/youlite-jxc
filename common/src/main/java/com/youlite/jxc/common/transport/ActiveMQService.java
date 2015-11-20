@@ -35,7 +35,6 @@ import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.TransportConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.youlite.jxc.common.transport.ITransportService;
 
 public class ActiveMQService implements ITransportService, ExceptionListener {
 	private static final Logger log = LoggerFactory
@@ -68,7 +67,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 			this.listener = listener;
 		}
 
-		@Override
 		public void onMessage(Message message) {
 			try {
 				if (message instanceof TextMessage) {
@@ -104,7 +102,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 			this.producer = producer;
 		}
 
-		@Override
 		public void sendMessage(String message) throws Exception {
 			TextMessage txt = session.createTextMessage(message);
 			producer.send(txt);
@@ -112,7 +109,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 
 	}
 
-	@Override
 	public ISender createSender(String subject) throws Exception {
 		MessageProducer producer = senders.get(subject);
 		if (null == producer) {
@@ -125,18 +121,15 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		return new Sender(producer);
 	}
 
-	@Override
 	public void sendMessage(String subject, String message) throws Exception {
 		createSender(subject).sendMessage(message);
 	}
 
-	@Override
 	public void onException(JMSException e) {
 		log.error(e.getMessage(), e);
 		e.printStackTrace();
 	}
 
-	@Override
 	public void startBroker() throws Exception {
 		broker = new BrokerService();
 		broker.setPersistent(false);
@@ -154,7 +147,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		return isStartedBroker;
 	}
 
-	@Override
 	public void startService() throws Exception {
 		ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
 				user, password, url);
@@ -171,7 +163,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		return isStartedService;
 	}
 
-	@Override
 	public void createReceiver(String subject, IMessageListener listener)
 			throws Exception {
 		// only one listener per subject allowed for point to point connection
@@ -187,7 +178,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 			consumer.setMessageListener(new MessageListenerAdaptor(listener));
 	}
 
-	@Override
 	public void removeReceiver(String subject) throws Exception {
 		MessageConsumer consumer = receivers.get(subject);
 		if (null == consumer)
@@ -204,12 +194,10 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		}
 	}
 
-	@Override
 	public void publishMessage(String subject, String message) throws Exception {
 		createPublisher(subject).sendMessage(message);
 	}
 
-	@Override
 	public void closeService() throws Exception {
 		removeAllReceivers();
 		session.close();
@@ -217,12 +205,10 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 
 	}
 
-	@Override
 	public void closeBroker() throws Exception {
 		broker.stop();
 	}
 
-	@Override
 	public ISender createPublisher(String subject) throws Exception {
 		MessageProducer producer = publishers.get(subject);
 		if (null == producer) {
@@ -235,7 +221,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		return new Sender(producer);
 	}
 
-	@Override
 	public void createSubscriber(String subject, IMessageListener listener)
 			throws Exception {
 		// many listeners per subject allowed for publish/subscribe
@@ -254,7 +239,6 @@ public class ActiveMQService implements ITransportService, ExceptionListener {
 		}
 	}
 
-	@Override
 	public void removeSubscriber(String subject, IMessageListener listener)
 			throws Exception {
 		ArrayList<IMessageListener> listeners = subscribers.get(subject);

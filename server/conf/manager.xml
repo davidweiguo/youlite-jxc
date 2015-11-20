@@ -12,4 +12,23 @@
 		<property name="embeddedHost" value="0.0.0.0"></property>
 		<property name="embeddedPort" ref="derbyPort"></property>
 	</bean>
+
+	<bean id="eventManager" class="com.youlite.jxc.common.event.RemoteEventManager">
+		<constructor-arg>
+			<ref bean="transportService" />
+		</constructor-arg>
+		<property name="embedBroker" value="true"></property>
+		<property name="bridges">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="transportService" class="com.youlite.jxc.common.transport.ActiveMQGenericService">
+		<property name="url" value="nio://0.0.0.0:61616"></property>
+		<property name="defaultSerialization" ref="xstreamSerialization"></property>
+	</bean>
+
+	<bean id="xstreamSerialization" class="com.youlite.jxc.common.transport.XStreamSerialization">
+	</bean>
 </beans>

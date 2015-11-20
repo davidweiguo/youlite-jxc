@@ -2,8 +2,11 @@ package com.youlite.jxc.server.persistence;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.derby.drda.NetworkServerControl;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,6 +14,8 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.youlite.jxc.server.pojo.Group;
 
 public class PersistenceManager {
 
@@ -29,15 +34,31 @@ public class PersistenceManager {
 		if (embeddedSQLServer) {
 			startEmbeddedSQLServer();
 		}
-		createTableSchema();
+		List<Group> groups = recoverGroups();
+		System.out.println(groups.size());
 	}
-
+	
 	private void startEmbeddedSQLServer() throws UnknownHostException,
 			Exception {
 		server = new NetworkServerControl(InetAddress.getByName(embeddedHost),
 				embeddedPort);
 		server.start(null);
 		log.info("Embedded SQL server started");
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Group> recoverGroups() {
+		Session session = sessionFactory.openSession();
+		List<Group> result = new ArrayList<Group>();
+		try {
+			result = (List<Group>) session.createCriteria(Group.class).list();
+		} catch (HibernateException e) {
+			log.error(e.getMessage(), e);
+			throw e;
+		} finally {
+			session.close();
+		}
+		return result;
 	}
 
 	public void uninit() {
@@ -55,13 +76,36 @@ public class PersistenceManager {
 		}
 	}
 
-	private void createTableSchema() {
-		Session session = sessionFactory.openSession();
-		Transaction trans = session.beginTransaction();
-		String hql = "CREATE TABLE ANYONE.GROUP_DEF (GROUP_ID VARCHAR(40) NOT NULL,GROUP_NAME VARCHAR(40) NOT NULL,PRIMARY KEY (GROUP_ID));";
-		Query query = session.createQuery(hql);
-		query.executeUpdate();
-		trans.commit();
-		session.close();
+	public boolean isEmbeddedSQLServer() {
+		return embeddedSQLServer;
 	}
+
+	public void setEmbeddedSQLServer(boolean embeddedSQLServer) {
+		this.embeddedSQLServer = embeddedSQLServer;
+	}
+
+	public String getEmbeddedHost() {
+		return embeddedHost;
+	}
+
+	public void setEmbeddedHost(String embeddedHost) {
+		this.embeddedHost = embeddedHost;
+	}
+
+	public int getEmbeddedPort() {
+		return embeddedPort;
+	}
+
+	public void setEmbeddedPort(int embeddedPort) {
+		this.embeddedPort = embeddedPort;
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 }

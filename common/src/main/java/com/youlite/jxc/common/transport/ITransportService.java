@@ -1,5 +1,7 @@
 package com.youlite.jxc.common.transport;
 
+import javax.jms.JMSException;
+
 public interface ITransportService {
 	void startBroker() throws Exception;
 
@@ -27,4 +29,6 @@ public interface ITransportService {
 	void sendMessage(String subject, String message) throws Exception;
 
 	void publishMessage(String subject, String message) throws Exception;
+
+	void onException(JMSException e);
 }

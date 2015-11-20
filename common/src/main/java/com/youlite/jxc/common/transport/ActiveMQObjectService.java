@@ -28,8 +28,6 @@ import org.slf4j.LoggerFactory;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import com.youlite.jxc.common.transport.IObjectTransportService;
-
 public class ActiveMQObjectService extends ActiveMQService implements
 		IObjectTransportService {
 	static Logger log = LoggerFactory.getLogger(ActiveMQObjectService.class);
@@ -46,7 +44,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 			this.listener = listener;
 		}
 
-		@Override
 		public void onMessage(Message message) {
 			try {
 				if (message instanceof TextMessage) {
@@ -65,9 +62,11 @@ public class ActiveMQObjectService extends ActiveMQService implements
 					byte[] bytes = new byte[length];
 					bms.readBytes(bytes);
 					listener.onMessage(new String(bytes));
-					log.debug("ActiveMQObjectService Received message: " + new String(bytes));
+					log.debug("ActiveMQObjectService Received message: "
+							+ new String(bytes));
 				} else {
-					log.error("ActiveMQObjectService Unexpected text message: " + message);
+					log.error("ActiveMQObjectService Unexpected text message: "
+							+ message);
 				}
 			} catch (JMSException e) {
 				log.error(e.getMessage(), e);
@@ -85,7 +84,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 			this.producer = producer;
 		}
 
-		@Override
 		public void sendMessage(Object obj) throws Exception {
 			String message = xstream.toXML(obj);
 			log.debug("Sending message: \n" + message);
@@ -95,7 +93,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 
 	}
 
-	@Override
 	public void createReceiver(String subject, IObjectListener listener)
 			throws Exception {
 		// only one listener per subject allowed for point to point connection
@@ -111,7 +108,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 			consumer.setMessageListener(new ObjectListenerAdaptor(listener));
 	}
 
-	@Override
 	public void createSubscriber(String subject, IObjectListener listener)
 			throws Exception {
 		// many listeners per subject allowed for publish/subscribe
@@ -130,7 +126,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 		}
 	}
 
-	@Override
 	public void removeSubscriber(String subject, IObjectListener listener)
 			throws Exception {
 		ArrayList<IObjectListener> listeners = objSubscribers.get(subject);
@@ -148,19 +143,16 @@ public class ActiveMQObjectService extends ActiveMQService implements
 
 	}
 
-	@Override
 	public void sendMessage(String subject, Object obj) throws Exception {
 		createObjectSender(subject).sendMessage(obj);
 
 	}
 
-	@Override
 	public void publishMessage(String subject, Object obj) throws Exception {
 		createObjectPublisher(subject).sendMessage(obj);
 
 	}
 
-	@Override
 	public IObjectSender createObjectSender(String subject) throws Exception {
 		MessageProducer producer = senders.get(subject);
 		if (null == producer) {
@@ -173,7 +165,6 @@ public class ActiveMQObjectService extends ActiveMQService implements
 		return new ObjectSender(producer);
 	}
 
-	@Override
 	public IObjectSender createObjectPublisher(String subject) throws Exception {
 		MessageProducer producer = publishers.get(subject);
 		if (null == producer) {

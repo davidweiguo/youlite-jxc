@@ -11,12 +11,18 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.youlite.jxc.common.IPlugin;
 import com.youlite.jxc.common.SystemInfo;
+import com.youlite.jxc.common.event.AsyncEventProcessor;
+import com.youlite.jxc.common.event.IAsyncEventManager;
+import com.youlite.jxc.common.event.IRemoteEventManager;
 import com.youlite.jxc.server.persistence.PersistenceManager;
 
 public class Server implements ApplicationContextAware {
 
 	@Autowired
 	private ApplicationContext applicationContext;
+
+	@Autowired
+	private IRemoteEventManager eventManager;
 
 	@Autowired
 	private PersistenceManager persistenceManager;
@@ -26,8 +32,27 @@ public class Server implements ApplicationContextAware {
 
 	private List<IPlugin> plugins;
 
+	private AsyncEventProcessor eventProcessor = new AsyncEventProcessor() {
+
+		@Override
+		public void subscribeToEvents() {
+			// subscribeToEvent(NodeInfoEvent.class, null);
+		}
+
+		@Override
+		public IAsyncEventManager getEventManager() {
+			return eventManager;
+		}
+
+	};
+
 	public void init() throws Exception {
 		persistenceManager.init();
+
+		eventProcessor.setHandler(this);
+		eventProcessor.init();
+		if (eventProcessor.getThread() != null)
+			eventProcessor.getThread().setName("Server");
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext)
