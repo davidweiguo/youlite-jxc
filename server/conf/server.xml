@@ -13,7 +13,7 @@
 	<bean id="server" class="com.youlite.jxc.server.Server">
 		<property name="plugins">
 			<list>
-				<ref bean="userAccountManager" />
+				<ref bean="userGroupManager" />
 			</list>
 		</property>
 	</bean>
@@ -30,8 +30,7 @@
 		</property>
 	</bean>
 
-	<bean id="userAccountManager" class="com.youlite.jxc.server.UserAccountManager">
-	</bean>
+	
 
 	<!-- Derby setting -->
 	<bean id="derbyPort" class="java.lang.String">

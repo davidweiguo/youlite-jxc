@@ -7,6 +7,12 @@
 
 	<context:annotation-config />
 
+	<bean id="userGroupManager" class="com.youlite.jxc.server.UserGroupManager">
+	</bean>
+
+	<bean id="userGroupKeeper" class="com.youlite.jxc.common.keeper.UserGroupKeeper">
+	</bean>
+
 	<bean id="persistenceManager" class="com.youlite.jxc.server.persistence.PersistenceManager">
 		<property name="embeddedSQLServer" value="true"></property>
 		<property name="embeddedHost" value="0.0.0.0"></property>
