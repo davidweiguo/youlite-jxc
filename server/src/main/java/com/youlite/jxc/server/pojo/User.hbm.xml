@@ -5,8 +5,16 @@
 
 <hibernate-mapping>
 	<class name="com.youlite.jxc.server.pojo.User" table="ANYONE.USER">
-		<id column="GROUP_ID" name="id" type="java.lang.String" />
-		<id column="GROUP_NAME" name="name" type="java.lang.String" />
+		<id column="USER_ID" name="id" type="java.lang.String" />
+		<property column="USER_NAME" name="name" type="java.lang.String" />
+		<property column="PASSWORD" name="password" type="java.lang.String" />
+		<property column="PHONE" name="phone" type="java.lang.String" />
+		<property column="CREATED" name="created" type="java.util.Date" />
+		<property column="LAST_LOGIN" name="lastLogin" type="java.util.Date" />
+		<property column="ACTIVE" name="active" type="java.lang.Boolean" />
+		<property column="ROLE" name="role" type="java.lang.String" />
+		<many-to-one name="group" column="GROUP_ID"
+			class="com.youlite.jxc.server.pojo.Group">
+		</many-to-one>
 	</class>
-
 </hibernate-mapping> 

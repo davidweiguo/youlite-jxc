@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.youlite.jxc.server.pojo.GoodsIn" table="ANYONE.GOODS_OUT">
+		<id column="GOODSOUT_ID" name="id" type="java.lang.String" />
+		<property column="USER_ID" name="userId" type="java.lang.String" />
+		<property column="PRICE" name="price" type="java.lang.Double" />
+		<property column="QTY" name="qty" type="java.lang.Long" />
+		<property column="CREATED" name="created" type="java.util.Date" />
+		<property column="EXPRESS_NUMBER" name="expressNum" type="java.lang.String" />
+		<property column="FEE" name="fee" type="java.lang.Double" />
+		<many-to-one name="goods" column="GOODS_ID"
+			class="com.youlite.jxc.server.pojo.Goods">
+		</many-to-one>
+	</class>
+</hibernate-mapping> 

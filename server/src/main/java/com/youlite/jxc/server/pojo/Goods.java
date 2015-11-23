@@ -1,5 +1,7 @@
 package com.youlite.jxc.server.pojo;
 
+import java.util.Date;
+
 public class Goods {
 
 	private String id;
@@ -11,6 +13,8 @@ public class Goods {
 	private Group group;
 
 	private long qty;
+
+	private Date created;
 
 	public String getId() {
 		return id;
@@ -50,5 +54,13 @@ public class Goods {
 
 	public void setQty(long qty) {
 		this.qty = qty;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 }

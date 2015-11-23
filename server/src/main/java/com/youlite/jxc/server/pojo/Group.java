@@ -12,6 +12,8 @@ public class Group implements Serializable {
 
 	private Set<User> users;
 
+	private Set<Goods> goods;
+
 	public Group() {
 	}
 
@@ -42,5 +44,13 @@ public class Group implements Serializable {
 
 	public void setUsers(Set<User> users) {
 		this.users = users;
+	}
+
+	public Set<Goods> getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Set<Goods> goods) {
+		this.goods = goods;
 	}
 }

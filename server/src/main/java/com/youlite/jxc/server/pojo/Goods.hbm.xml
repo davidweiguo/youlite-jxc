@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.youlite.jxc.server.pojo.Goods" table="ANYONE.GOODS">
+		<id column="GOODS_ID" name="id" type="java.lang.String" />
+		<property column="GOODS_NUMBER" name="number" type="java.lang.String" />
+		<property column="GOODS_NAME" name="name" type="java.lang.String" />
+		<property column="CREATED" name="created" type="java.util.Date" />
+		<property column="QTY" name="qty" type="java.lang.Long" />
+		<many-to-one name="group" column="GROUP_ID"
+			class="com.youlite.jxc.server.pojo.Group">
+		</many-to-one>
+	</class>
+</hibernate-mapping> 

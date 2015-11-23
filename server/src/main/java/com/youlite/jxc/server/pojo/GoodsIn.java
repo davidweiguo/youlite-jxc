@@ -6,7 +6,7 @@ public class GoodsIn {
 
 	private String id;
 
-	private String goodsId;
+	private Goods goods;
 
 	private String userId;
 
@@ -28,12 +28,12 @@ public class GoodsIn {
 		this.id = id;
 	}
 
-	public String getGoodsId() {
-		return goodsId;
+	public Goods getGoods() {
+		return goods;
 	}
 
-	public void setGoodsId(String goodsId) {
-		this.goodsId = goodsId;
+	public void setGoods(Goods goods) {
+		this.goods = goods;
 	}
 
 	public String getUserId() {

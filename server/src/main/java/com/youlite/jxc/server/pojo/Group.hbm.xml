@@ -4,9 +4,16 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.youlite.jxc.server.pojo.Group" table="ANYONE.GROUP_DEF">
+	<class name="com.youlite.jxc.server.pojo.Group" table="ANYONE.GROUPS">
 		<id column="GROUP_ID" name="id" type="java.lang.String" />
-		<id column="GROUP_NAME" name="name" type="java.lang.String" />
+		<property column="GROUP_NAME" name="name" type="java.lang.String" />
+		<set name="users">
+			<key column="GROUP_ID"></key>
+			<one-to-many class="com.youlite.jxc.server.pojo.User" />
+		</set>
+		<set name="goods">
+			<key column="GROUP_ID"></key>
+			<one-to-many class="com.youlite.jxc.server.pojo.Goods" />
+		</set>
 	</class>
-
 </hibernate-mapping> 
