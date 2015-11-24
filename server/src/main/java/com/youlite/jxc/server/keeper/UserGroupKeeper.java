@@ -15,8 +15,6 @@ public class UserGroupKeeper {
 	// k=User id; v=User
 	private Map<String, User> userMap = new ConcurrentHashMap<String, User>();
 
-	
-	
 	public void injectGroups(List<Group> groups) {
 		for (Group group : groups) {
 			groupMap.put(group.getId(), group);

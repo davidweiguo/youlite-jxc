@@ -8,6 +8,8 @@
 	<context:annotation-config />
 
 	<import resource="manager.xml" />
+	<import resource="keeper.xml" />
+	<import resource="transport.xml" />
 	<import resource="persistence.xml" />
 
 	<bean id="server" class="com.youlite.jxc.server.Server">
@@ -30,7 +32,16 @@
 		</property>
 	</bean>
 
-	
+	<bean id="eventManager" class="com.youlite.jxc.common.event.RemoteEventManager">
+		<constructor-arg>
+			<ref bean="transportService" />
+		</constructor-arg>
+		<property name="embedBroker" value="true"></property>
+		<property name="bridges">
+			<list>
+			</list>
+		</property>
+	</bean>
 
 	<!-- Derby setting -->
 	<bean id="derbyPort" class="java.lang.String">
