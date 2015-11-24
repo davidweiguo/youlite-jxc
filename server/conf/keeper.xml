@@ -5,9 +5,9 @@
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="userGroupKeeper" class="com.youlite.jxc.common.keeper.UserGroupKeeper">
+	<bean id="userGroupKeeper" class="com.youlite.jxc.server.keeper.UserGroupKeeper">
 	</bean>
 
-	<bean id="goodsKeeper" class="com.youlite.jxc.common.keeper.GoodsKeeper">
+	<bean id="goodsKeeper" class="com.youlite.jxc.server.keeper.GoodsKeeper">
 	</bean>
 </beans>

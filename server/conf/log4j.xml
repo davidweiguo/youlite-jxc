@@ -57,15 +57,8 @@
 		<priority value="INFO" />
 	</category>
 
-	<category
-		name="com.cyanspring.common.marketdata.MarketDataReceiver.QuoteLog"
-		additivity="false">
-		<priority value="DEBUG" />
-		<appender-ref ref="QUOTEFILE" />
-	</category>
-
 	<root>
-		<priority value="DEBUG" />
+		<priority value="INFO" />
 		<appender-ref ref="FILE" />
 		<appender-ref ref="CONSOLE" />
 	</root>
