@@ -119,6 +119,12 @@ public class Server implements ApplicationContextAware {
 		log.debug("PersistenceManager initialized");
 		persistenceManager.init();
 
+		if (null != plugins) {
+			for (IPlugin plugin : plugins) {
+				plugin.init();
+			}
+		}
+
 		Thread thread = new Thread(new Runnable() {
 
 			public void run() {
