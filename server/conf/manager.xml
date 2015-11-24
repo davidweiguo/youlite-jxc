@@ -7,10 +7,10 @@
 
 	<context:annotation-config />
 
-	<bean id="userGroupManager" class="com.youlite.jxc.server.UserGroupManager">
+	<bean id="userGroupManager" class="com.youlite.jxc.server.manager.UserGroupManager">
 	</bean>
 
-	<bean id="goodsManager" class="com.youlite.jxc.server.GoodsManager">
+	<bean id="goodsManager" class="com.youlite.jxc.server.manager.GoodsManager">
 	</bean>
 
 	<bean id="persistenceManager" class="com.youlite.jxc.server.persistence.PersistenceManager">

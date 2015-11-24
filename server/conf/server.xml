@@ -16,6 +16,7 @@
 		<property name="plugins">
 			<list>
 				<ref bean="userGroupManager" />
+				<ref bean="goodsManager" />
 			</list>
 		</property>
 	</bean>

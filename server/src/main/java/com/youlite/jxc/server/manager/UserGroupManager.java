@@ -1,4 +1,4 @@
-package com.youlite.jxc.server;
+package com.youlite.jxc.server.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
