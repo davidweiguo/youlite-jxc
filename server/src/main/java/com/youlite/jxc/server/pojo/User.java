@@ -15,7 +15,7 @@ public class User implements Serializable, Cloneable {
 	private Date lastLogin;
 	private Boolean active = true;
 	private Group group;
-	private String role;
+	private UserRole role;
 
 	private User() {
 		this.created = Clock.getInstance().now();
@@ -106,12 +106,11 @@ public class User implements Serializable, Cloneable {
 		this.group = group;
 	}
 
-	public String getRole() {
+	public UserRole getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(UserRole role) {
 		this.role = role;
 	}
-
 }

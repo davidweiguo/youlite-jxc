@@ -12,7 +12,11 @@
 		<property column="CREATED" name="created" type="java.util.Date" />
 		<property column="LAST_LOGIN" name="lastLogin" type="java.util.Date" />
 		<property column="ACTIVE" name="active" type="java.lang.Boolean" />
-		<property column="ROLE" name="role" type="java.lang.String" />
+		<property column="ROLE" name="role" length="30">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.youlite.jxc.server.pojo.UserRole</param>
+			</type>
+		</property>
 		<many-to-one name="group" column="GROUP_ID"
 			class="com.youlite.jxc.server.pojo.Group">
 		</many-to-one>
