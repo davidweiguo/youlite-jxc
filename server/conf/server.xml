@@ -44,6 +44,9 @@
 		</property>
 	</bean>
 
+	<bean id="scheduleManager" class="com.youlite.jxc.common.event.ScheduleManager">
+	</bean>
+
 	<!-- Derby setting -->
 	<bean id="derbyPort" class="java.lang.String">
 		<constructor-arg value="1527" />
