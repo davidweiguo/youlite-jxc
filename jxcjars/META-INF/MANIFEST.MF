@@ -7,7 +7,6 @@ Export-Package: com.youlite.jxc.common,
  com.youlite.jxc.common.event,
  com.youlite.jxc.common.event.system,
  com.youlite.jxc.common.transport,
- com.youlite.jxc.common.util,
- com.youlite.jxc.jxcjars
+ com.youlite.jxc.common.util
 Bundle-ClassPath: com.youlite.common.1.0.jar,
  .

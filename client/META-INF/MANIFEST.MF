@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: client
+Bundle-SymbolicName: client
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.client
+Require-Bundle: jxcjars;bundle-version="1.0.0"

@@ -101,8 +101,6 @@
 	<modules>
 		<module>server</module>
 		<module>common</module>
-		<module>client</module>
-		<module>jxcjars</module>
 		<module>parent</module>
 	</modules>
 

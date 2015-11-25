@@ -3,26 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>jxcjars</groupId>
+	<artifactId>jxcjars</artifactId>
+	<packaging>eclipse-plugin</packaging>
+
 	<parent>
 		<groupId>com.youlite.jxc.parent</groupId>
 		<artifactId>jxc-parent</artifactId>
-		<version>${jxc-version}</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../parent</relativePath>
 	</parent>
-	<groupId>com.youlite.jxc.jxcjars</groupId>
-	<artifactId>jxcjars</artifactId>
-	<name>jxcjars</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
