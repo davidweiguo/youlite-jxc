@@ -4,17 +4,15 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.youlite.jxc.client</groupId>
-	<artifactId>client</artifactId>
-	<name>client</name>
+	<artifactId>jxc-client</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
 	<parent>
-		<groupId>com.youlite.jxc</groupId>
-		<artifactId>jxcjars</artifactId>
-		<version>1.0</version>
-		<relativePath>../jxcjars</relativePath>
+		<groupId>com.youlite.jxc.parent</groupId>
+		<artifactId>jxc-parent</artifactId>
+		<version>${jxc-version}</version>
+		<relativePath>../parent</relativePath>
 	</parent>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
