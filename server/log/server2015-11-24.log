@@ -1,0 +1,318 @@
+17:38:13,882 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6ebbd7d: startup date [Tue Nov 24 17:38:13 CST 2015]; root of context hierarchy
+17:38:13,914 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:38:14,001 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:38:14,031 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:38:14,049 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:38:14,065 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:38:14,210 [main] WARN  FileSystemXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userGroupManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.youlite.jxc.common.event.IRemoteEventManager com.youlite.jxc.server.manager.UserGroupManager.eventManager; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.youlite.jxc.common.keeper.UserGroupKeeper] for bean with name 'userGroupKeeper' defined in file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]; nested exception is java.lang.ClassNotFoundException: com.youlite.jxc.common.keeper.UserGroupKeeper
+17:38:58,676 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5c1b0d41: startup date [Tue Nov 24 17:38:58 CST 2015]; root of context hierarchy
+17:38:58,707 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:38:58,797 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:38:58,826 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:38:58,842 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:38:58,857 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:38:59,002 [main] WARN  FileSystemXmlApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userGroupManager': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.youlite.jxc.common.event.IRemoteEventManager com.youlite.jxc.server.manager.UserGroupManager.eventManager; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.youlite.jxc.common.keeper.UserGroupKeeper] for bean with name 'userGroupKeeper' defined in file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]; nested exception is java.lang.ClassNotFoundException: com.youlite.jxc.common.keeper.UserGroupKeeper
+17:39:31,179 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@5c1b0d41: startup date [Tue Nov 24 17:39:31 CST 2015]; root of context hierarchy
+17:39:31,211 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:39:31,302 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:39:31,331 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:39:31,346 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:39:31,361 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:39:31,794 [main] INFO  Environment  - Hibernate 3.2.5
+17:39:31,796 [main] INFO  Environment  - hibernate.properties not found
+17:39:31,797 [main] INFO  Environment  - Bytecode provider name : cglib
+17:39:31,798 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+17:39:31,822 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+17:39:31,823 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:39:32,375 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+17:39:32,375 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+17:39:32,383 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+17:39:32,401 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+17:39:32,402 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:39:32,402 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+17:39:32,402 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+17:39:32,403 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+17:39:32,403 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+17:39:32,403 [main] INFO  SettingsFactory  - Connection release mode: on_close
+17:39:32,403 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+17:39:32,403 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+17:39:32,403 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+17:39:32,403 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+17:39:32,403 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:39:32,404 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+17:39:32,404 [main] INFO  SettingsFactory  - Query language substitutions: {}
+17:39:32,404 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+17:39:32,404 [main] INFO  SettingsFactory  - Second-level cache: enabled
+17:39:32,404 [main] INFO  SettingsFactory  - Query cache: disabled
+17:39:32,404 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+17:39:32,404 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+17:39:32,404 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+17:39:32,407 [main] INFO  SettingsFactory  - Statistics: disabled
+17:39:32,407 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+17:39:32,407 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+17:39:32,407 [main] INFO  SettingsFactory  - Named query checking : enabled
+17:39:32,421 [main] INFO  SessionFactoryImpl  - building session factory
+17:39:32,424 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+17:40:22,074 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6ebbd7d: startup date [Tue Nov 24 17:40:22 CST 2015]; root of context hierarchy
+17:40:22,105 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:40:22,195 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:40:22,223 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:40:22,238 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:40:22,254 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:40:22,683 [main] INFO  Environment  - Hibernate 3.2.5
+17:40:22,685 [main] INFO  Environment  - hibernate.properties not found
+17:40:22,686 [main] INFO  Environment  - Bytecode provider name : cglib
+17:40:22,687 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+17:40:22,712 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+17:40:22,714 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:40:23,070 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+17:40:23,070 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+17:40:23,079 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+17:40:23,099 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+17:40:23,100 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:40:23,100 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+17:40:23,100 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+17:40:23,100 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+17:40:23,100 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+17:40:23,100 [main] INFO  SettingsFactory  - Connection release mode: on_close
+17:40:23,100 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+17:40:23,100 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+17:40:23,100 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+17:40:23,100 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+17:40:23,101 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:40:23,102 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+17:40:23,102 [main] INFO  SettingsFactory  - Query language substitutions: {}
+17:40:23,102 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+17:40:23,102 [main] INFO  SettingsFactory  - Second-level cache: enabled
+17:40:23,102 [main] INFO  SettingsFactory  - Query cache: disabled
+17:40:23,102 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+17:40:23,102 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+17:40:23,102 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+17:40:23,104 [main] INFO  SettingsFactory  - Statistics: disabled
+17:40:23,104 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+17:40:23,105 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+17:40:23,105 [main] INFO  SettingsFactory  - Named query checking : enabled
+17:40:23,121 [main] INFO  SessionFactoryImpl  - building session factory
+17:40:23,123 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+17:40:50,829 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@33568c61: startup date [Tue Nov 24 17:40:50 CST 2015]; root of context hierarchy
+17:40:50,862 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:40:50,953 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:40:50,983 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:40:51,001 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:40:51,017 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:40:51,451 [main] INFO  Environment  - Hibernate 3.2.5
+17:40:51,452 [main] INFO  Environment  - hibernate.properties not found
+17:40:51,453 [main] INFO  Environment  - Bytecode provider name : cglib
+17:40:51,455 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+17:40:51,479 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+17:40:51,481 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:40:51,859 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+17:40:51,859 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+17:40:51,867 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+17:40:51,887 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+17:40:51,888 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:40:51,888 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+17:40:51,888 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+17:40:51,889 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+17:40:51,889 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+17:40:51,889 [main] INFO  SettingsFactory  - Connection release mode: on_close
+17:40:51,889 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+17:40:51,889 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+17:40:51,889 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+17:40:51,889 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+17:40:51,889 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:40:51,890 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+17:40:51,890 [main] INFO  SettingsFactory  - Query language substitutions: {}
+17:40:51,890 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+17:40:51,890 [main] INFO  SettingsFactory  - Second-level cache: enabled
+17:40:51,890 [main] INFO  SettingsFactory  - Query cache: disabled
+17:40:51,890 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+17:40:51,891 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+17:40:51,891 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+17:40:51,893 [main] INFO  SettingsFactory  - Statistics: disabled
+17:40:51,893 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+17:40:51,894 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+17:40:51,894 [main] INFO  SettingsFactory  - Named query checking : enabled
+17:40:51,909 [main] INFO  SessionFactoryImpl  - building session factory
+17:40:51,911 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+17:45:42,735 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@7662953a: startup date [Tue Nov 24 17:45:42 CST 2015]; root of context hierarchy
+17:45:42,768 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:45:42,862 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:45:42,893 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:45:42,912 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:45:42,929 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:45:43,366 [main] INFO  Environment  - Hibernate 3.2.5
+17:45:43,368 [main] INFO  Environment  - hibernate.properties not found
+17:45:43,369 [main] INFO  Environment  - Bytecode provider name : cglib
+17:45:43,370 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+17:45:43,394 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+17:45:43,395 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:45:44,059 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+17:45:44,059 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+17:45:44,067 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+17:45:44,085 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+17:45:44,086 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:45:44,087 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+17:45:44,087 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Connection release mode: on_close
+17:45:44,087 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+17:45:44,087 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+17:45:44,087 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:45:44,088 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+17:45:44,088 [main] INFO  SettingsFactory  - Query language substitutions: {}
+17:45:44,089 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+17:45:44,089 [main] INFO  SettingsFactory  - Second-level cache: enabled
+17:45:44,089 [main] INFO  SettingsFactory  - Query cache: disabled
+17:45:44,089 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+17:45:44,089 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+17:45:44,089 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+17:45:44,091 [main] INFO  SettingsFactory  - Statistics: disabled
+17:45:44,091 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+17:45:44,092 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+17:45:44,092 [main] INFO  SettingsFactory  - Named query checking : enabled
+17:45:44,106 [main] INFO  SessionFactoryImpl  - building session factory
+17:45:44,108 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+17:45:44,154 [main] INFO  Server  - SystemInfo: Test:EB:S1:nio://localhost:61616
+17:45:44,302 [main] INFO  BrokerService  - Using Persistence Adapter: MemoryPersistenceAdapter
+17:45:44,302 [main] INFO  BrokerService  - ActiveMQ 5.5.0 JMS Message Broker (localhost) is starting
+17:45:44,303 [main] INFO  BrokerService  - For help or more information please see: http://activemq.apache.org/
+17:45:44,312 [JMX connector] INFO  ManagementContext  - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+17:45:44,347 [main] INFO  TransportServerThreadSupport  - Listening for connections at: nio://David-PC:61616
+17:45:44,347 [main] INFO  TransportConnector  - Connector nio://0.0.0.0:61616 Started
+17:45:44,349 [main] INFO  BrokerService  - ActiveMQ JMS Message Broker (localhost, ID:David-PC-40690-1448358343120-1:1) started
+17:45:44,476 [main] DEBUG Server  - PersistenceManager initialized
+17:45:44,513 [main] INFO  PersistenceManager  - Embedded SQL server started
+17:45:44,535 [Thread-9] INFO  Server  - Group Definition loaded: 0
+17:45:44,535 [Thread-9] INFO  Server  - User Definition loaded: 0
+17:45:44,535 [Thread-9] INFO  Server  - Goods Definition loaded: 0
+17:45:44,535 [Thread-9] INFO  Server  - GoodsIn Definition loaded: 0
+17:45:44,535 [Thread-9] INFO  Server  - GoodsOut Definition loaded: 0
+17:45:44,535 [Thread-9] INFO  Server  - GoodsReturn Definition loaded: 0
+17:45:44,547 [main] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.NodeInfoEvent>
+  <priority>NORMAL</priority>
+  <sender>David-PC.S1-20151124-174544-155-1834</sender>
+  <server>true</server>
+  <firstTime>true</firstTime>
+  <inbox>Test.EB.S1</inbox>
+  <uid>David-PC.S1-20151124-174544-155-1834</uid>
+</com.youlite.jxc.common.event.system.NodeInfoEvent>
+17:45:44,547 [main] INFO  Server  - Published my node info
+17:45:44,548 [com.youlite.jxc.server.Server] INFO  AsyncEventProcessor  - processAsyncTimerEvent added in method map
+17:45:44,548 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:44,548 [ActiveMQ Session Task-1] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.NodeInfoEvent>
+  <priority>NORMAL</priority>
+  <sender>David-PC.S1-20151124-174544-155-1834</sender>
+  <server>true</server>
+  <firstTime>true</firstTime>
+  <inbox>Test.EB.S1</inbox>
+  <uid>David-PC.S1-20151124-174544-155-1834</uid>
+</com.youlite.jxc.common.event.system.NodeInfoEvent>
+17:45:44,554 [ActiveMQ Session Task-1] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:47,548 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:47,551 [ActiveMQ Session Task-2] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:50,548 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:50,551 [ActiveMQ Session Task-2] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:53,548 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:53,551 [ActiveMQ Session Task-2] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:56,548 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:56,551 [ActiveMQ Session Task-2] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:59,549 [com.youlite.jxc.server.Server] DEBUG ActiveMQGenericService  - Sending TextMessage body is : <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:45:59,552 [ActiveMQ Session Task-2] DEBUG ActiveMQGenericService  - ActiveMQGenericService Received TextMessage: <com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+  <priority>NORMAL</priority>
+  <sender>Test.EB.S1</sender>
+</com.youlite.jxc.common.event.system.ServerHeartBeatEvent>
+17:46:32,004 [main] INFO  FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@751dc8af: startup date [Tue Nov 24 17:46:32 CST 2015]; root of context hierarchy
+17:46:32,035 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\server.xml]
+17:46:32,120 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\manager.xml]
+17:46:32,151 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\keeper.xml]
+17:46:32,169 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\transport.xml]
+17:46:32,187 [main] INFO  XmlBeanDefinitionReader  - Loading XML bean definitions from file [C:\Users\David\git\youlite-jxc\server\conf\persistence.xml]
+17:46:32,632 [main] INFO  Environment  - Hibernate 3.2.5
+17:46:32,634 [main] INFO  Environment  - hibernate.properties not found
+17:46:32,635 [main] INFO  Environment  - Bytecode provider name : cglib
+17:46:32,636 [main] INFO  Environment  - using JDK 1.4 java.sql.Timestamp handling
+17:46:32,660 [main] INFO  LocalSessionFactoryBean  - Building new Hibernate SessionFactory
+17:46:32,662 [main] INFO  ConnectionProviderFactory  - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:46:33,067 [main] INFO  SettingsFactory  - RDBMS: Apache Derby, version: 10.11.1.1 - (1616546)
+17:46:33,067 [main] INFO  SettingsFactory  - JDBC driver: Apache Derby Embedded JDBC Driver, version: 10.11.1.1 - (1616546)
+17:46:33,075 [main] INFO  Dialect  - Using dialect: org.hibernate.dialect.DerbyDialect
+17:46:33,095 [main] INFO  TransactionFactoryFactory  - Using default transaction strategy (direct JDBC transactions)
+17:46:33,096 [main] INFO  TransactionManagerLookupFactory  - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:46:33,096 [main] INFO  SettingsFactory  - Automatic flush during beforeCompletion(): disabled
+17:46:33,096 [main] INFO  SettingsFactory  - Automatic session close at end of transaction: disabled
+17:46:33,096 [main] INFO  SettingsFactory  - Scrollable result sets: enabled
+17:46:33,096 [main] INFO  SettingsFactory  - JDBC3 getGeneratedKeys(): disabled
+17:46:33,096 [main] INFO  SettingsFactory  - Connection release mode: on_close
+17:46:33,096 [main] INFO  SettingsFactory  - Default batch fetch size: 1
+17:46:33,096 [main] INFO  SettingsFactory  - Generate SQL with comments: disabled
+17:46:33,097 [main] INFO  SettingsFactory  - Order SQL updates by primary key: disabled
+17:46:33,097 [main] INFO  SettingsFactory  - Order SQL inserts for batching: disabled
+17:46:33,097 [main] INFO  SettingsFactory  - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:46:33,098 [main] INFO  ASTQueryTranslatorFactory  - Using ASTQueryTranslatorFactory
+17:46:33,098 [main] INFO  SettingsFactory  - Query language substitutions: {}
+17:46:33,098 [main] INFO  SettingsFactory  - JPA-QL strict compliance: disabled
+17:46:33,098 [main] INFO  SettingsFactory  - Second-level cache: enabled
+17:46:33,098 [main] INFO  SettingsFactory  - Query cache: disabled
+17:46:33,098 [main] INFO  SettingsFactory  - Cache provider: org.hibernate.cache.NoCacheProvider
+17:46:33,098 [main] INFO  SettingsFactory  - Optimize cache for minimal puts: disabled
+17:46:33,098 [main] INFO  SettingsFactory  - Structured second-level cache entries: disabled
+17:46:33,101 [main] INFO  SettingsFactory  - Statistics: disabled
+17:46:33,101 [main] INFO  SettingsFactory  - Deleted entity synthetic identifier rollback: disabled
+17:46:33,101 [main] INFO  SettingsFactory  - Default entity-mode: pojo
+17:46:33,101 [main] INFO  SettingsFactory  - Named query checking : enabled
+17:46:33,117 [main] INFO  SessionFactoryImpl  - building session factory
+17:46:33,119 [main] INFO  SessionFactoryObjectFactory  - Not binding factory to JNDI, no JNDI name configured
+17:46:33,169 [main] INFO  Server  - SystemInfo: Test:EB:S1:nio://localhost:61616
+17:46:33,241 [main] INFO  BrokerService  - Using Persistence Adapter: MemoryPersistenceAdapter
+17:46:33,242 [main] INFO  BrokerService  - ActiveMQ 5.5.0 JMS Message Broker (localhost) is starting
+17:46:33,242 [main] INFO  BrokerService  - For help or more information please see: http://activemq.apache.org/
+17:46:33,254 [JMX connector] INFO  ManagementContext  - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+17:46:33,289 [main] INFO  TransportServerThreadSupport  - Listening for connections at: nio://David-PC:61616
+17:46:33,289 [main] INFO  TransportConnector  - Connector nio://0.0.0.0:61616 Started
+17:46:33,291 [main] INFO  BrokerService  - ActiveMQ JMS Message Broker (localhost, ID:David-PC-40739-1448358392379-1:1) started
+17:46:33,457 [main] INFO  PersistenceManager  - Embedded SQL server started
+17:46:33,479 [Thread-9] INFO  Server  - Group Definition loaded: 0
+17:46:33,480 [Thread-9] INFO  Server  - User Definition loaded: 0
+17:46:33,480 [Thread-9] INFO  Server  - Goods Definition loaded: 0
+17:46:33,480 [Thread-9] INFO  Server  - GoodsIn Definition loaded: 0
+17:46:33,480 [Thread-9] INFO  Server  - GoodsOut Definition loaded: 0
+17:46:33,480 [Thread-9] INFO  Server  - GoodsReturn Definition loaded: 0
+17:46:33,491 [main] INFO  Server  - Published my node info
+17:46:33,492 [com.youlite.jxc.server.Server] INFO  AsyncEventProcessor  - processAsyncTimerEvent added in method map
