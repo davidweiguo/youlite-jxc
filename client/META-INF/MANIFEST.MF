@@ -3,5 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: client
 Bundle-SymbolicName: client
 Bundle-Version: 1.0.0.qualifier
-Export-Package: org.client
+Bundle-ClassPath: jxcjars.1.0.0.qualifier.jar,
+ .
 Require-Bundle: jxcjars;bundle-version="1.0.0"

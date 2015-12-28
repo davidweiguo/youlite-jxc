@@ -9,10 +9,12 @@ import org.apache.derby.drda.NetworkServerControl;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.youlite.jxc.server.pojo.Customer;
 import com.youlite.jxc.server.pojo.Goods;
 import com.youlite.jxc.server.pojo.GoodsIn;
 import com.youlite.jxc.server.pojo.GoodsOut;
@@ -37,8 +39,6 @@ public class PersistenceManager {
 		if (embeddedSQLServer) {
 			startEmbeddedSQLServer();
 		}
-		List<Group> groups = recoverGroups();
-		System.out.println(groups.size());
 	}
 
 	private void startEmbeddedSQLServer() throws UnknownHostException,
@@ -140,6 +140,19 @@ public class PersistenceManager {
 			session.close();
 		}
 		return result;
+	}
+
+	public void saveCustomer(Customer customer) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			session.save(customer);
+			tx.commit();
+			System.out.println(customer.getId());
+		} finally {
+			session.close();
+		}
 	}
 
 	public void uninit() {

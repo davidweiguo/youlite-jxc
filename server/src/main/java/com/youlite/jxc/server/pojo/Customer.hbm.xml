@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2015 1:20:58 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.youlite.jxc.server.pojo.Customer" table="ANYONE.CUSTOMERS">
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="identity" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" not-null="true" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" not-null="true" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" not-null="true" default="123456" />
+		</property>
+		<property name="phone" type="int">
+			<column name="PHONE" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" not-null="true" />
+		</property>
+		<property name="sex" type="character">
+			<column name="SEX" not-null="true" />
+		</property>
+		<property name="married" type="boolean">
+			<column name="IS_MARRIED" not-null="true" default="false" />
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" />
+		</property>
+		<property name="birthday" type="java.sql.Date">
+			<column name="BIRTHDAY" />
+		</property>
+		<property name="registeredTime" type="java.sql.Timestamp">
+			<column name="REGISTERED_TIME" />
+		</property>
+	</class>
+</hibernate-mapping>

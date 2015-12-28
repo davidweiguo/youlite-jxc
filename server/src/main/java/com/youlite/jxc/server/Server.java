@@ -29,6 +29,7 @@ import com.youlite.jxc.common.util.TimeUtil;
 import com.youlite.jxc.server.manager.GoodsManager;
 import com.youlite.jxc.server.manager.UserGroupManager;
 import com.youlite.jxc.server.persistence.PersistenceManager;
+import com.youlite.jxc.server.pojo.Customer;
 import com.youlite.jxc.server.pojo.Goods;
 import com.youlite.jxc.server.pojo.GoodsIn;
 import com.youlite.jxc.server.pojo.GoodsOut;
@@ -246,9 +247,18 @@ public class Server implements ApplicationContextAware {
 				configFile);
 
 		// start server
-		Server server = (Server) context.getBean("server");
+		PersistenceManager pers = (PersistenceManager) context.getBean("persistenceManager");
 		try {
-			server.init();
+			pers.init();
+			Customer customer = new Customer();
+			customer.setName("Amy");
+			customer.setEmail("Amy@hkfdt.cn");
+			customer.setAddress("NO 58, Changliu Road Shanghai");
+			customer.setMarried(false);
+			customer.setPassword("123456");
+			customer.setPhone(12345678);
+			customer.setSex('F');
+			pers.saveCustomer(customer);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -55,3 +55,17 @@ CREATE TABLE ANYONE.GOODS_RETURN (
   FEE DOUBLE DEFAULT 0,
   REASON VARCHAR(300) NOT NULL,
   PRIMARY KEY (GOODSRETURN_ID));
+  
+  create table ANYONE.CUSTOMERS (
+	ID bigint not null  primary key,
+	NAME varchar(15) not null,
+	EMAIL varchar(128) not null,
+	PASSWORD varchar(8) not null,
+	PHONE int,
+	ADDRESS varchar(255),
+	SEX char(1),
+	IS_MARRIED boolean,
+	DESCRIPTION varchar(255),
+	BIRTHDAY date,
+	REGISTERED_TIME timestamp
+);
